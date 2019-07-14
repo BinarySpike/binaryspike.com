@@ -5,16 +5,17 @@ module.exports = {
     target: 'web',
     mode: 'development',
     entry: {
-        app: './src/app.js',
+        app: ['vue', './src/app.js']
     },
     output: {
-        path: path.join(__dirname, 'dist/'),
+        path: path.join(__dirname, 'dist'),
         publicPath: '/',
         filename: 'app.js'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist/'),
+        contentBase: path.join(__dirname, 'dist'),
         publicPath: '/',
+        host: "192.168.37.194",
         hot: true,
     },
     devtool: 'source-map',
@@ -22,6 +23,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'babel-loader',
