@@ -1,21 +1,11 @@
-const firebase = require("firebase/app");
-require("firebase/firestore");
-const myData = require('./src/data.js')
-const _ = require('lodash')
+import db from './src/database.js'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAnUJiHtfTdpVXSIYFmJBXYcpcEbjXiIIg",
-  authDomain: "bin-listing.firebaseapp.com",
-  databaseURL: "https://bin-listing.firebaseio.com",
-  projectId: "bin-listing",
-  storageBucket: "bin-listing.appspot.com",
-  messagingSenderId: "565166920201",
-  appId: "1:565166920201:web:736c913d96a436f6"
-};
+db.collection('items').get().then(snapshot => {
+    snapshot.forEach(item => {
+        db.collection('data').doc('data')
+    })
+})
 
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
 
 myData.forEach(item => {
     let tags = item.tags ? item.tags.split(/, ?/) : []

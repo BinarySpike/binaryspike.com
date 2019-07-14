@@ -1,9 +1,11 @@
 const path = require('path')
+const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     target: 'web',
-    mode: 'development',
+    mode: 'production',
     entry: {
         app: ['vue', './src/app.js']
     },
@@ -67,6 +69,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
+        new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
+        new VueLoaderPlugin(),
+        // new BundleAnalyzerPlugin(),
     ]
 }

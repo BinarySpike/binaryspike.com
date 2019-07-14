@@ -1,5 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+/*import firebase from "firebase/app";
+import "firebase/firestore";*/
 
 const firebaseConfig = {
     apiKey: "AIzaSyAnUJiHtfTdpVXSIYFmJBXYcpcEbjXiIIg",
@@ -11,6 +11,6 @@ const firebaseConfig = {
     appId: "1:565166920201:web:736c913d96a436f6"
   };
   // Initialize Cloud Firestore through Firebase
-  firebase.initializeApp(firebaseConfig);
-export default firebase.firestore();
+  window.firebase.initializeApp(firebaseConfig);
+export default window.firebase.firestore();
 

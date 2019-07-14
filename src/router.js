@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Hunting from './views/Hunting.vue'
+import Home from './views/Home/Home.vue'
+import Hunting from './views/Hunting/Hunting.vue'
 
 Vue.use(Router)
 
