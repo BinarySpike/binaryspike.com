@@ -15,7 +15,7 @@ import db from "./database"
 export default {
   components: {
     NavBar,
-  }
+  },
   data: function() {
     return {
       db: db,
