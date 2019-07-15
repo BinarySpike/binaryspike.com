@@ -34,9 +34,9 @@ export default {
   @apply mb-8 shadow rounded-lg overflow-hidden;
 }
 .title {
-  @apply py-1 px-2 bg-gray-800 text-white text-xl;
+  @apply py-1 px-2 bg-gray-900 text-white text-xl;
 }
 .content {
-  @apply px-2 py-1 flex flex-wrap items-stretch;
+  @apply px-2 py-2 flex flex-wrap items-stretch;
 }
 </style>

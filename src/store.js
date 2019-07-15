@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import db from './database'
 import pickBy from 'lodash/pickBy';
+import debounce from 'lodash/debounce';
 
 Vue.use(Vuex);
 
@@ -43,7 +44,8 @@ export default new Vuex.Store({
             
         },
         modifyItem(state, item) {
-            state.items[item.name] = item;
+            //state.items[item.name] = item;
+            Vue.set(state.items, item.name, item);
         },
         addTag(state, tag) {
             let defaultTag = {
@@ -55,7 +57,7 @@ export default new Vuex.Store({
         },
         loading(state, flag) {
             state.loading = flag;
-        }
+        },
     },
     actions: {
         async loadHuntingData({ commit }) {
