@@ -5,7 +5,7 @@
         <div class="accept" @click="acceptItem">
           <fa-icon :icon="['fas', 'check']" />
         </div>
-        <div :class="['title', itemTitleColorClass(item)]">{{ item.name }}</div>
+        <div :class="['title', itemTitleColorClass(item)]" :title="item.name">{{ item.name }}</div>
         <div class="delete" @click="deleteItem">
           <fa-icon :icon="['fas', 'trash']" />
         </div>

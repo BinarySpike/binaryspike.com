@@ -63,7 +63,7 @@ export default new Vuex.Store({
         async loadHuntingData({ commit }) {
             commit('loading', true)
 
-            let itemsOperation = db.collection("items").get().then(snapshot => {
+            let itemsOperation = db.collection("items").onSnapshot(snapshot => {
                 snapshot.forEach(item => {
                     commit('addItem', item);
                 });
