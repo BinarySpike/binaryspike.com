@@ -1,26 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    target: 'web',
-    mode: 'production',
-    entry: {
-        app: ['vue', './src/app.js']
-    },
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/',
         filename: 'app.js'
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        publicPath: '/',
-        host: "192.168.37.194",
-        hot: true,
-    },
-    //devtool: 'source-map',
     module: {
         rules: [
             {
@@ -69,8 +56,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
         new VueLoaderPlugin(),
-        // new BundleAnalyzerPlugin(),
     ]
 }

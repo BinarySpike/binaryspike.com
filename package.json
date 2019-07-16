@@ -31,7 +31,12 @@
     "webpack": "^4.35.3",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  }
 }
