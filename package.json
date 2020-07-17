@@ -19,7 +19,7 @@
     "babel-polyfill": "^6.26.0",
     "css-loader": "^3.0.0",
     "firebase": "^6.2.4",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "tailwindcss": "^1.0.4",
